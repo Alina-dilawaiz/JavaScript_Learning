@@ -1,0 +1,22 @@
+// console.log("Hello world")
+// console.log("Aleena")
+// console.log("Dilawaiz")
+// console.log("Semester5")
+// process.exit(0)
+// process.exitCode = 1;
+
+
+// const _ = require("lodash");
+// const arr = [1, 4, 6, 8]
+// console.log(_.last(arr))
+
+// const cowsay = require("cowsay");
+// console.log(cowsay.say({
+//     text: "I am learning nodeJS",
+//     e: "00",
+//     u:"U"
+// }))
+
+const { tesla, ford } = require("./car")
+console.log(JSON.stringify(tesla, null, 3));
+console.log(JSON.stringify(ford, undefined, 2));

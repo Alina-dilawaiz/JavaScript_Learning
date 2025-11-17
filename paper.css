@@ -1,0 +1,21 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100 vh;
+    background-color: violet;
+    margin: 0;
+}
+.div-class {
+    width: 200px;
+    height: 100px;
+    background-color: white;
+    border: 2px dashed gray;
+    text-align: center;
+    line-height: 100px;
+    padding: 30px;
+    border: 2px solid black;
+    margin: 40px;
+    background-clip: padding-box;
+
+}
