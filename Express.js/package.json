@@ -1,0 +1,20 @@
+{
+  "name": "my-express",
+  "version": "1.0.0",
+  "description": "This is my express learning code.",
+  "license": "ISC",
+  "author": "Aleena Dilawaiz",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "dependencies": {
+    "dot-env": "^0.0.1",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
