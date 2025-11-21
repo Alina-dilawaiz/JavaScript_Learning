@@ -1,21 +1,37 @@
+/* General styling for the page */
 body {
-    display: flex;
+    display: flex; /* Center the box on the page */
     justify-content: center;
     align-items: center;
-    min-height: 100 vh;
-    background-color: violet;
+    min-height: 100vh;
+    background-color: #f0f0f0; /* Light background for contrast */
     margin: 0;
 }
-.div-class {
+
+/* The main box element */
+.box-model-example {
+    /* 1. Content Area: Define the size of the content box */
     width: 200px;
     height: 100px;
-    background-color: white;
-    border: 2px dashed gray;
+    background-color: white; /* Color for the content area */
+    border: 1px dashed lightgray; /* Dashed line around the content */
     text-align: center;
-    line-height: 100px;
-    padding: 30px;
-    border: 2px solid black;
-    margin: 40px;
-    background-clip: padding-box;
+    line-height: 100px; /* Vertically center the text */
+    font-family: sans-serif;
+    font-weight: bold;
+    color: #444;
 
+    /* 2. Padding: Space between the Content and the Border */
+    padding: 30px; 
+    /* The background of the content (white) extends into the padding area */
+
+    /* 3. Border: The solid green line */
+    border-style: solid; 
+    border-width: 20px;
+    border-color: #38a467; /* The green color */
+
+    /* 4. Margin: The transparent space outside the Border */
+    margin: 40px; 
+    /* This creates the transparent boundary shown outside the green box */
+    background-clip: padding-box; /* Ensures the background color only covers content and padding */
 }
