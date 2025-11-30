@@ -1,0 +1,5 @@
+.chat-Messages-container {
+    flex-grow: 1;
+    margin-top: 20px;
+    overflow-y: auto;
+}
