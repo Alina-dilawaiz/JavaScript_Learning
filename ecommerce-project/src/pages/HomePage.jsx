@@ -4,9 +4,9 @@ import { Header } from "../components/Header";
 import "./HomePage.css";
 
 
-export function HomePage() {
+export function HomePage({ cart }) {
   const [products, setProducts] = useState([]);
-  const [cart, setCart] = useState([]);
+  
   //1st: name of data
   //2nd: Updates data, regenerates data
   useEffect(() => {
@@ -18,15 +18,7 @@ export function HomePage() {
       .catch((error) => {
         console.error("Error fetching products:", error);
       });
-
-    axios.get('/api/cart-items')
-      .then((response) => {
-        setCart("Cart items loaded:", response.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching cart items:", error);
-      });
-  }, []); //empty array means code run only once
+  });
 
   
   return (
