@@ -11,13 +11,11 @@ function App() {
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
-    axios.get('/api/cart-items?expand-product')
-        .then((response) => {
+    const fetchAppData = async () => {
+      const response = await axios.get('/api/cart-items?expand-product')
           setCart("Cart items loaded:", response.data);
-        })
-        .catch((error) => {
-          console.error("Error fetching cart items:", error);
-        });
+    };
+    fetchAppData();
     }, []); //empty array means code run only once
 
     
