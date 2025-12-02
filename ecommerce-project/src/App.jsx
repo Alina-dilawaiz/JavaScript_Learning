@@ -1,32 +1,31 @@
-import { Route, Routes } from 'react-router'
-import { useState, useEffect } from 'react'
-import axios from 'axios'
-import { HomePage } from './pages/home/HomePage'
-import { CheckoutPage } from './pages/checkout/CheckoutPage'
-import { OrdersPage } from './pages/orders/OrdersPage'
-import { TrackingPage } from './pages/TrackingPage'
-import './App.css'
+import { Route, Routes } from "react-router";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { HomePage } from "./pages/home/HomePage";
+import { CheckoutPage } from "./pages/checkout/CheckoutPage";
+import { OrdersPage } from "./pages/orders/OrdersPage";
+import { TrackingPage } from "./pages/TrackingPage";
+import "./App.css";
 
 function App() {
   const [cart, setCart] = useState([]);
+  const loadCart = async () => {
+    const response = await axios.get("/api/cart-items?expand-product");
+    setCart("Cart items loaded:", response.data);
+  };
 
   useEffect(() => {
-    const fetchAppData = async () => {
-      const response = await axios.get('/api/cart-items?expand-product')
-          setCart("Cart items loaded:", response.data);
-    };
-    fetchAppData();
-    }, []); //empty array means code run only once
+    loadCart();
+  }, []); //empty array means code run only once
 
-    
   return (
     <Routes>
-      <Route index element={<HomePage cart={cart} />} />
+      <Route index element={<HomePage cart={cart} loadCart={loadCart} />} />
       <Route path="checkout" element={<CheckoutPage cart={cart} />} />
       <Route path="orders" element={<OrdersPage cart={cart} />}></Route>
       <Route path="tracking" element={<TrackingPage />}></Route>
     </Routes>
-  )
+  );
 }
 
-export default App
+export default App;
