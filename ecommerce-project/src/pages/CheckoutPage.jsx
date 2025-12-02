@@ -10,7 +10,7 @@ export function CheckoutPage({ cart }) {
 
   useEffect(() => {
     axios
-      .get("/api-/delivery-options?expand-estimatedDliveryTime")
+      .get("/api-/delivery-options?expand=estimatedDliveryTime")
       .then((response) => {
         setDelievryOptions(response.data);
       });
